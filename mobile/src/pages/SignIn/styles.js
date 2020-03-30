@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
-import Input from "~/components/Input";
-import Button from "~/components/Button";
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 export const Container = styled.View`
   flex: 1;
@@ -28,6 +28,6 @@ export const SignLink = styled.TouchableOpacity`
 `;
 
 export const SignLinkText = styled.Text`
-  color: #FFF;
+  color: #fff;
   font-weight: bold;
 `;

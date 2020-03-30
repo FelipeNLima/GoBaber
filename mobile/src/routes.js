@@ -1,20 +1,45 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 
-const AppStack = createStackNavigator();
+import SignIn from '~/pages/SignIn';
+import SignUp from '~/pages/SignUp';
+import Dashboard from '~/pages/Dashboard';
 
-import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-export default function Routes() {
-  return (
-    <NavigationContainer>
-      <AppStack.Navigator screenOptions={{ headerShown: false }}>
-        <AppStack.Screen name= "SignIn" component={SignIn}/>
-        <AppStack.Screen name= "SignUp" component={SignUp}/>
-      </AppStack.Navigator>
-    </NavigationContainer>
+export default function createRouter(isSigned = false) {
+  return !isSigned ? (
+    <>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+      </Stack.Navigator>
+    </>
+  ) : (
+    <>
+      <Tab.Navigator
+        tabBarOptions={{
+          activeTintColor: '#7159c1',
+          inactiveTintColor: '#999',
+          labelStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+        headerMode="none"
+      >
+        <Tab.Screen
+          name="Dashboard"
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              
+            ),
+          }}
+          component={Dashboard}
+        />
+      </Tab.Navigator>
+    </>
   );
-
 }

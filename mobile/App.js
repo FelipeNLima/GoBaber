@@ -1,20 +1,21 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { StatusBar } from 'react-native';
 
+import './src/config/ReactotronConfig';
 
-import Routes from './src/routes';
+import { store, persistor } from '~/store'
+import Route from '~/routes';
 
 export default function App() {
   return (
-    <Routes />
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+        <Route />
+      </PersistGate>
+    </Provider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

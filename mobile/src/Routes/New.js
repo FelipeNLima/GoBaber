@@ -51,9 +51,9 @@ export default function New() {
         component={SelectDateTime}
       />
       <Stack.Screen
-        name="Conf"
+        name="Confirm"
         options={{
-          title: 'Detalhes da encomenda',
+          title: 'Confirmar agendamento',
         }}
         component={Confirm}
       />

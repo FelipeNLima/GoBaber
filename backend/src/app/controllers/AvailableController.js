@@ -12,7 +12,7 @@ import Appointment from '../models/Appointment';
 
 class AvailableController {
   async index(req, res) {
-    const date = req.query;
+    const { date } = req.query;
 
     if (!date) {
       return res.status(400).json({ error: 'Invalid date' });
@@ -61,7 +61,7 @@ class AvailableController {
       };
     });
 
-    return res.json();
+    return res.json(avaiable);
   }
 }
 

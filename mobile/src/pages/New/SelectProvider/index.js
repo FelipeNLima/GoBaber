@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
-import { Container, ProvidersList, Provider, Avatar, Name } from './styles';
 import Background from '~/components/Background';
 
 import api from '~/services/api';
 
-export default function SelectProvider({ navigation }) {
+import { Container, ProvidersList, Provider, Avatar, Name } from './styles';
+
+export default function SelectProvider() {
+  const navigation = useNavigation();
   const [providers, setProviders] = useState([]);
 
   useEffect(() => {
@@ -23,11 +26,11 @@ export default function SelectProvider({ navigation }) {
       <Container>
         <ProvidersList
           data={providers}
-          keyExtrator={(provider) => String(provider.id)}
+          keyExtractor={(provider) => String(provider.id)}
           renderItem={({ item: provider }) => (
             <Provider
               onPress={() =>
-                navigation.navigate('SelectDateTime', { provider })
+                navigation.navigate('SelectDateTime', { providers: provider })
               }
             >
               <Avatar

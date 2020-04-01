@@ -70,15 +70,12 @@
 - [Redux-Saga](https://redux-saga.js.org/)
 - [rocketseat/unform](https://github.com/Rocketseat/unform)
 - [React-native-linear-gradient](https://github.com/react-native-community/react-native-linear-gradient)
-## Installation
-
-First of all, to run this application you'll need to install [Node.js v10.15](https://nodejs.org) or higher, [Yarn v1.17](https://yarnpkg.com/lang/en/) or higher, [Docker](https://www.docker.com/docker-community), [Genymotion](https://www.genymotion.com/) for emulate device and [Android Studio SDK](https://developer.android.com/studio) on your computer.
 
 ### How to use:
 
 ```bash
 # Clone this repository
 $ git clone https://github.com/FelipeNLima/GoBaber.git
-
+```
 
 Made with by Felipe Lima :smiley: [Get in touch!](https://www.linkedin.com/in/felipe-lima-00bb62171/)

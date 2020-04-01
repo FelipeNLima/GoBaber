@@ -1,19 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import Background from '~/components/Background';
 
 import { signOut } from '~/store/modules/auth/actions';
 import { updateProfileRequest } from '~/store/modules/user/actions';
 
-import {
-  Container,
-  Title,
-  Form,
-  FormInput,
-  Separator,
-  SubmitButton,
-  LogoutButton,
-} from './styles';
+import { Container, Title, Form, FormInput, Separator, Text } from './styles';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -119,9 +112,33 @@ export default function Profile() {
             onChangeText={setConfirmPassword}
           />
 
-          <SubmitButton onPress={handleSubmit}>Atualizar perfil</SubmitButton>
+          <TouchableOpacity
+            onPress={handleSubmit}
+            style={{
+              marginTop: 5,
+              backgroundColor: '#3b9eff',
+              height: 46,
+              borderRadius: 4,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Text>Atualizar perfil</Text>
+          </TouchableOpacity>
 
-          <LogoutButton onPress={handleLogout}>Sair do GoBarber</LogoutButton>
+          <TouchableOpacity
+            onPress={handleLogout}
+            style={{
+              marginTop: 10,
+              backgroundColor: '#f64c75',
+              height: 46,
+              borderRadius: 4,
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Text>Sair do GoBarber</Text>
+          </TouchableOpacity>
         </Form>
       </Container>
     </Background>

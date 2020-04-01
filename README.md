@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img alt="Bootcamp GoStack" src="https://user-images.githubusercontent.com/26943148/78173045-772cda80-742d-11ea-9374-380050d6e52c.png" />
+    <img alt="Bootcamp GoStack" src="https://user-images.githubusercontent.com/26943148/78173638-62047b80-742e-11ea-8cfb-eb9be03fbde2.png" />
     <br />
     Bootcamp GoStack - GoBarber
 </h1>

@@ -33,7 +33,7 @@ export default function Header() {
               <strong>{profile.name}</strong>
               <Link to="/profile">Meu perfil</Link>
             </div>
-            <img src={Avatar()} alt="Diego Fernandes" />
+            <img src={Avatar()} alt="user" />
           </Profile>
         </aside>
       </Content>
